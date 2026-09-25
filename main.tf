@@ -11,5 +11,5 @@ output "mensagem" {
 }
 resource "local_file" "arquivo_estudo" {
 filename = "terraform-aprendizado.txt"
-content = "Meu primeirissimo recurso dentro do Terraform"
+content = "Meu segundo teste alterando um recurso Terraform"
 }
