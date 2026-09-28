@@ -26,3 +26,12 @@ resource "local_file" "arquivo_estudo" {
   filename = "terraform-aprendizado.txt"
   content  = "Meu segundo teste alterando um recurso Terraform"
 }
+data "azurerm_client_config" "current" {}
+
+output "azure_tenant_id" {
+  value = data.azurerm_client_config.current.tenant_id
+}
+
+output "azure_subscription_id" {
+  value = data.azurerm_client_config.current.subscription_id
+}
