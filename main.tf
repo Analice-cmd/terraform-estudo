@@ -93,3 +93,10 @@ resource "azurerm_linux_virtual_machine" "vm" {
     version   = "latest"
   }
 }
+removed {
+  from = local_file.arquivo_estudo
+
+  lifecycle {
+    destroy = false
+  }
+}
