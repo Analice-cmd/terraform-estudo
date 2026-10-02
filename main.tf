@@ -18,7 +18,7 @@ variable "admin_password" {
 
 resource "azurerm_resource_group" "rg" {
   name     = "rg-terraform-teste"
-  location = "East US"
+  location = "Southeast US"
 }
 
 resource "azurerm_virtual_network" "vnet" {
@@ -71,7 +71,7 @@ resource "azurerm_linux_virtual_machine" "vm" {
   name                = "vm-terraform-teste"
   resource_group_name = azurerm_resource_group.rg.name
   location            = azurerm_resource_group.rg.location
-  size                = "Standard_B2s"
+  size                = "Standard_B1s"
   admin_username      = "azureuser"
 
   network_interface_ids = [
@@ -93,10 +93,4 @@ resource "azurerm_linux_virtual_machine" "vm" {
     version   = "latest"
   }
 }
-removed {
-  from = local_file.arquivo_estudo
 
-  lifecycle {
-    destroy = false
-  }
-}
