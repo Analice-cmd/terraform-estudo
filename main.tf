@@ -83,6 +83,9 @@ resource "azurerm_network_interface_security_group_association" "nsg_association
 }
 
 resource "azurerm_linux_virtual_machine" "vm" {
+lifecycle {
+    ignore_changes = [admin_password]
+  }
   name                = "vm-terraform-teste"
   resource_group_name = azurerm_resource_group.rg.name
   location            = azurerm_resource_group.rg.location
